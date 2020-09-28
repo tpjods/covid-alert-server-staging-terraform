@@ -49,6 +49,14 @@
         {
           "name": "DATABASE_URL",
           "valueFrom": "${database_url}"
+        },
+        {
+          "name": "METRICS_USERNAME",
+          "valueFrom": "${metrics_username}"
+        },
+        {
+          "name": "METRICS_USERNAME",
+          "valueFrom": "${metrics_password}"
         }
       ]
     }

@@ -41,3 +41,27 @@ resource "aws_secretsmanager_secret_version" "key_submission_env_key_claim_token
   secret_id     = aws_secretsmanager_secret.key_submission_env_key_claim_token.id
   secret_string = var.ecs_task_key_submission_env_key_claim_token
 }
+
+
+###
+# Metrics Uname/Pword
+### 
+
+
+resource "aws_secretsmanager_secret" "metrics_username" {
+  name = "metrics-username-${random_string.random.result}"
+}
+
+resource "aws_secretsmanager_secret_version" "metrics_username" {
+  secret_id     = aws_secretsmanager_secret.metrics_username.id
+  secret_string = var.metrics_username
+}
+
+resource "aws_secretsmanager_secret" "metrics_password" {
+  name = "metrics-password-${random_string.random.result}"
+}
+
+resource "aws_secretsmanager_secret_version" "metrics_password" {
+  secret_id     = aws_secretsmanager_secret.metrics_passsword.id
+  secret_string = var.metrics_password
+}
